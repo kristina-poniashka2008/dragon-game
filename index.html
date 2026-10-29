@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111018">
+  <title>Рыцарь против Дракона</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand-mark">✦</div>
+      <div>
+        <p class="eyebrow">ЛЕГЕНДЫ СТАРОГО МИРА</p>
+        <h1>Рыцарь <span>против</span> Дракона</h1>
+      </div>
+      <div class="round-badge" id="roundBadge">БИТВА 01</div>
+    </header>
+
+    <section class="arena" aria-label="Поле битвы">
+      <div class="mist mist-one"></div><div class="mist mist-two"></div>
+      <div class="combatant dragon-side">
+        <div class="creature dragon-art" aria-hidden="true">🐉</div>
+        <div class="name-line"><span class="status-dot"></span><h2>Древний дракон</h2></div>
+        <div class="health-label"><span>ЗДОРОВЬЕ</span><strong id="dragonHpText">— / —</strong></div>
+        <div class="health-track"><div class="health-fill dragon-fill" id="dragonHpBar"></div></div>
+        <div class="stat-row"><span>Урон <b id="dragonHit">—</b></span><span>Огненные атаки <b id="dragonFireCount">—</b></span></div>
+      </div>
+      <div class="versus">VS</div>
+      <div class="combatant knight-side">
+        <div class="creature knight-art" aria-hidden="true">🛡️</div>
+        <div class="name-line"><span class="status-dot player-dot"></span><h2>Храбрый рыцарь</h2></div>
+        <div class="health-label"><span>ЗДОРОВЬЕ</span><strong id="playerHpText">— / —</strong></div>
+        <div class="health-track"><div class="health-fill player-fill" id="playerHpBar"></div></div>
+        <div class="stat-row"><span>Урон <b id="playerHit">—</b></span><span>Суперудары <b id="playerUltCount">—</b></span></div>
+        <div class="shield-label">🛡 Прочность щита: <strong id="shieldText">—</strong></div>
+      </div>
+    </section>
+
+    <section class="battle-panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">ТВОЙ ХОД</p><h2 id="turnTitle">Приготовься к битве</h2></div>
+        <span class="turn-indicator" id="turnIndicator">● ОЖИДАНИЕ</span>
+      </div>
+      <p class="hint" id="hintText">Выбери действие, чтобы начать сражение.</p>
+      <div class="actions" id="actionButtons">
+        <button class="action primary" id="attackBtn">⚔️ Обычный удар <small>Надёжная атака</small></button>
+        <button class="action power" id="ultimateBtn">🔥 Суперудар <small>Сильнее, но заряд ограничен</small></button>
+        <button class="action shield" id="shieldBtn">🛡️ Поднять щит <small>Защита от следующей атаки</small></button>
+      </div>
+      <div class="log-wrap">
+        <div class="log-title"><span>ХРОНИКА БИТВЫ</span><button id="clearLogBtn" class="text-button">Очистить</button></div>
+        <ol id="battleLog" class="battle-log"><li class="muted">Твои подвиги будут записаны здесь…</li></ol>
+      </div>
+      <div class="footer-actions">
+        <button class="secondary" id="restartBtn">↻ Начать заново</button>
+        <span class="footer-note">Каждая битва уникальна</span>
+      </div>
+    </section>
+    <footer>Создано на основе твоей игры на Python и ООП · Версия для браузера</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
